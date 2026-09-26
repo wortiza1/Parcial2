@@ -1,3 +1,7 @@
+import { useState, useReducer, useRef } from 'react';
+import ComandaDetalle from './ComandaDetalle';
+import TemporizadorPromo from './TemporizadorPromo';
+
 const MENU_INICIAL = [
   { id: 'h1', nombre: 'Hamburguesa Doble', precio: 45 },
   { id: 'p1', nombre: 'Papas Supremas', precio: 20 },
@@ -24,7 +28,7 @@ const facturasReducers = (state, action) => {
   }
 };
 
-export default function TerminalPOS() {
+export const TerminalPOS = () => {
   const [pedidoActual, setPedidoActual] = useState([]);
   const [turnoAbierto, setTurnoAbierto] = useState(true);
 
@@ -92,3 +96,5 @@ export default function TerminalPOS() {
     </div>
   );
 }
+
+export default TerminalPOS;
